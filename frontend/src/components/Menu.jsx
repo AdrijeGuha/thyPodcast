@@ -179,7 +179,6 @@ const Menu = ({ setMenuOpen, darkMode, setDarkMode, setUploadOpen }) => {
                         <ExitToAppRoundedIcon />
                         <NavText>Log Out</NavText>
                     </Elements>
-
                     :
                     <Elements onClick={() => dispatch(openSignin())}>
                         <ExitToAppRoundedIcon />

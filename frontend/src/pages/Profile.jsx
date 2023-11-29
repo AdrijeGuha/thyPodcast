@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Avatar from '@mui/material/Avatar';
 import { getUsers } from '../api/index';
 import { PodcastCard } from '../components/PodcastCard.jsx'
+import Upload from '../components/Upload.jsx';
 
 const ProfileAvatar = styled.div`
   padding-left:3rem;
@@ -117,6 +118,7 @@ const Profile = () => {
     const [user, setUser] = useState();
     const { currentUser } = useSelector(state => state.user);
     const [name, setName] = useState("");
+    const [uploadOpen, setUploadOpen] = useState(false);
 
     const token = localStorage.getItem("podstreamtoken");
     const getUser = async () => {
@@ -162,10 +164,9 @@ const Profile = () => {
             }
             {currentUser && user?.podcasts.length === 0 &&
                 <FilterContainer box={true} >
-                    <Topic>Your Uploads
-                    </Topic>
+                    <Topic>Your Uploads</Topic>
                     <Container>
-                        <ButtonContainer>Upload</ButtonContainer>
+                        <ButtonContainer>Upload</ButtonContainer> 
                     </Container>
                 </FilterContainer>
             }

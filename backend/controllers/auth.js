@@ -4,11 +4,8 @@ import bcrypt from "bcrypt";
 import { createError } from "../error.js";
 import jwt from "jsonwebtoken";
 import nodemailer from "nodemailer";
-import dotenv from 'dotenv';
 import otpGenerator from 'otp-generator';
-
-
-dotenv.config();
+import 'dotenv/config';
 
 const transporter = nodemailer.createTransport({
     service: "gmail",

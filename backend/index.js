@@ -1,8 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-// import { PORT, mongoDB_URL } from "./config.js";
-require('dotenv').config();
+import 'dotenv/config';
 
 //routes
 import authRoutes from './routes/auth.js';
