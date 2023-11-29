@@ -274,10 +274,10 @@ const Upload = ({ setUploadOpen }) => {
     };
 
     const createpodcast = async () => {
-        console.log(podcast);
+        console.log("podcast: \n",podcast);
         setLoading(true);
         await createPodcast(podcast, token).then((res) => {
-            console.log(res);
+            console.log("res: \n",res);
             setDisabled(true);
             setBackDisabled(true);
             setUploadOpen(false);
@@ -289,12 +289,11 @@ const Upload = ({ setUploadOpen }) => {
                     severity: "success",
                 })
             )
-        }
-        ).catch((err) => {
+        }).catch((err) => {
             setDisabled(false);
             setBackDisabled(false);
             setLoading(false);
-            console.log(err);
+            console.log("Error:\n",err);
             dispatch(
                 openSnackbar({
                     open: true,

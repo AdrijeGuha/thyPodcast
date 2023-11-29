@@ -10,7 +10,6 @@ export const createPodcast = async (req, res, next) => {
 
         let episodeList = []
         await Promise.all(req.body.episodes.map(async (item) => {
-
             const episode = new Episodes(
                 { creator: user.id, ...item }
             );
@@ -40,6 +39,7 @@ export const createPodcast = async (req, res, next) => {
 
         res.status(201).json(savedPodcast);
     } catch (err) {
+        console.log("error with making new upload")
         next(err);
     }
 };
@@ -132,15 +132,15 @@ export const favoritPodcast = async (req, res, next) => {
 
 export const addView = async (req, res, next) => {
     try {
-      await Podcasts.findByIdAndUpdate(req.params.id, {
-        $inc: { views: 1 },
-      });
-      res.status(200).json("The view has been increased.");
+        await Podcasts.findByIdAndUpdate(req.params.id, {
+            $inc: { views: 1 },
+        });
+        res.status(200).json("The view has been increased.");
     } catch (err) {
-      next(err);
+        next(err);
     }
-  };
-  
+};
+
 
 
 //searches
@@ -175,9 +175,9 @@ export const getByTag = async (req, res, next) => {
 export const getByCategory = async (req, res, next) => {
     const query = req.query.q;
     try {
-        const podcast = await Podcasts.find({ 
-            
-        category: { $regex: query, $options: "i" },
+        const podcast = await Podcasts.find({
+
+            category: { $regex: query, $options: "i" },
         }).populate("creator", "name img").populate("episodes");
         res.status(200).json(podcast);
     } catch (err) {
@@ -188,11 +188,11 @@ export const getByCategory = async (req, res, next) => {
 export const search = async (req, res, next) => {
     const query = req.query.q;
     try {
-      const podcast = await Podcasts.find({
-        name: { $regex: query, $options: "i" },
-      }).populate("creator", "name img").populate("episodes").limit(40);
-      res.status(200).json(podcast);
+        const podcast = await Podcasts.find({
+            name: { $regex: query, $options: "i" },
+        }).populate("creator", "name img").populate("episodes").limit(40);
+        res.status(200).json(podcast);
     } catch (err) {
-      next(err);
+        next(err);
     }
-  };
+};

@@ -14,11 +14,7 @@ const app = express();
 app.use(express.json());
 
 // Middleware for handeling CORS policy
-const corsConfig = {
-    credentials: true,
-    origin: true,
-};
-app.use(cors(corsConfig))
+app.use(cors());
 
 const connect = () => {
     mongoose.set('strictQuery', true);
