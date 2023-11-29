@@ -2,7 +2,7 @@
 <img width="150" src="https://github.com/AdrijeGuha/thyPodcast/blob/f293975b085dd9d08271aebfc3cd2c8b4eec3d65/frontend/src/Images/Logo.png" alt="thyPodcast_Log0">
 </p>
 
-<h1 align="center"><a href="https://thy-podcast.vercel.app/" target="_blank">thyPodcast</a></h1>
+<h1 align="center"><a target="_blank" href="https://thy-podcast.vercel.app/">thyPodcast</a></h1>
 
 This project aims to create a website that can __host podcasts__, and it is a part of the _Ethnus_ internship and MERN stack training program.  
 
