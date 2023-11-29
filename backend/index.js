@@ -1,7 +1,8 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import { PORT, mongoDB_URL } from "./config.js";
+// import { PORT, mongoDB_URL } from "./config.js";
+require('dotenv').config();
 
 //routes
 import authRoutes from './routes/auth.js';
@@ -22,7 +23,7 @@ app.use(cors(corsConfig))
 
 const connect = () => {
     mongoose.set('strictQuery', true);
-    mongoose.connect(mongoDB_URL).then(() => {
+    mongoose.connect(process.env.mongoDB_URL).then(() => {
         console.log('MongoDB connected');
     }).catch((err) => {
         console.log(err);
@@ -43,8 +44,8 @@ app.use((err, req, res, next) => {
     })
 })
 
-app.listen(PORT, () => {
-    console.log(`App is listening to port: ${PORT}`);
+app.listen(process.env.PORT, () => {
+    console.log(`App is listening to port: ${process.env.PORT}`);
     console.log("Connected");
     connect();
 })
