@@ -6,11 +6,12 @@ import { store, persistor } from './redux/store';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/es/integration/react';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import 'dotenv/config';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <GoogleOAuthProvider clientId="558717330026-du82979remmop59ovt849vocjirdeols.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId={process.env.ClientID}>
       <Provider store={store}>
         <PersistGate persistor={persistor}>
           <App />
