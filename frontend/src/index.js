@@ -11,7 +11,7 @@ import 'dotenv/config';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <GoogleOAuthProvider clientId={process.env.ClientID}>
+    <GoogleOAuthProvider clientId={process.env.REACT_APP_ClientID}>
       <Provider store={store}>
         <PersistGate persistor={persistor}>
           <App />

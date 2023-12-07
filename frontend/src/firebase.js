@@ -1,6 +1,5 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import 'dotenv/config';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -8,13 +7,13 @@ import 'dotenv/config';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: process.env.APIkey,
-  authDomain: "thypodcast-1635b.firebaseapp.com",
-  projectId: "thypodcast-1635b",
-  storageBucket: "thypodcast-1635b.appspot.com",
-  messagingSenderId: "948633648637",
-  appId: "1:948633648637:web:6be6d4b5282e59e03b6d94",
-  measurementId: "G-ZJYCQ4WVMC"
+  apiKey: process.env.REACT_APP_APIkey,
+  authDomain: "thypodcast-project.firebaseapp.com",
+  projectId: "thypodcast-project",
+  storageBucket: "thypodcast-project.appspot.com",
+  messagingSenderId: "997408958843",
+  appId: "1:997408958843:web:1f4dae95d4f27ad1bb35de",
+  measurementId: "G-8EH86N9JLG"
 };
 
 
