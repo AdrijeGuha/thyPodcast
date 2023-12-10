@@ -3,6 +3,7 @@ import jwt_decode from 'jwt-decode';
 
 const API = axios.create({ baseURL: `https://thypodcast-backend.onrender.com/api` });
 // const API = axios.create({ baseURL: `http://localhost:3300/api` }); // for local testing
+// const API = axios.create({ baseURL: `https://thy-podcast-backend.vercel.app/api` }); // for local testing
 
 //auth
 export const signIn = async ({ email, password }) => await API.post('/auth/signin', { email, password });
